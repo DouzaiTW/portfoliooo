@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>YA RONG TSAI | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- 🌟 精準載入：完美支援人文雜誌美學的 Noto Serif TC (思源宋體) 字體庫 🌟 -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Space+Grotesk:wght@600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&family=Noto+Serif+TC:wght@400;500;700&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "inverse-surface": "#313030",
+                      "on-secondary-fixed-variant": "#464747",
+                      "primary-fixed-dim": "#c8c6c5",
+                      "on-secondary-fixed": "#1b1c1c",
+                      "on-tertiary-fixed-variant": "#484645",
+                      "on-secondary": "#ffffff",
+                      "tertiary-fixed": "#e6e2e0",
+                      "surface": "#fdf8f8",
+                      "on-primary-fixed": "#1b1c1c",
+                      "surface-bright": "#fdf8f8",
+                      "tertiary-fixed-dim": "#c9c6c4",
+                      "on-error-container": "#93000a",
+                      "on-tertiary-fixed": "#1c1b1a",
+                      "on-surface": "#1c1b1b",
+                      "secondary-fixed-dim": "#c7c6c6",
+                      "error": "#ba1a1a",
+                      "on-primary-container": "#898888",
+                      "secondary": "#5e5e5e",
+                      "secondary-container": "#e3e2e2",
+                      "on-background": "#1c1b1b",
+                      "inverse-on-surface": "#f4f0ef",
+                      "surface-container-lowest": "#ffffff",
+                      "outline": "#747878",
+                      "primary": "#0a0a0a",
+                      "surface-container": "#f1edec",
+                      "on-primary": "#ffffff",
+                      "on-surface-variant": "#444748",
+                      "surface-tint": "#5f5e5e",
+                      "surface-container-high": "#ebe7e7",
+                      "background": "#fdf8f8",
+                      "on-primary-fixed-variant": "#474746",
+                      "secondary-fixed": "#e3e2e2",
+                      "outline-variant": "#c4c7c7",
+                      "primary-fixed": "#e5e2e1",
+                      "surface-variant": "#e5e2e1",
+                      "inverse-primary": "#c8c6c5",
+                      "surface-dim": "#ddd9d8",
+                      "error-container": "#ffdad6",
+                      "on-error": "#ffffff",
+                      "on-secondary-container": "#646464",
+                      "primary-container": "#212121",
+                      "surface-container-highest": "#e5e2e1",
+                      "on-tertiary": "#ffffff",
+                      "surface-container-low": "#f7f3f2",
+                      "tertiary": "#0b0a09",
+                      "on-tertiary-container": "#8b8886",
+                      "tertiary-container": "#222120"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px",
+                      "neumorphic": "24px"
+              },
+              "spacing": {
+                      "sm": "12px",
+                      "md": "24px",
+                      "lg": "48px",
+                      "base": "8px",
+                      "xs": "4px",
+                      "gutter": "24px",
+                      "margin": "32px",
+                      "xl": "80px"
+              },
+              "fontFamily": {
+                      "body-md": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "headline-xl": ["Inter"],
+                      "label-caps": ["Space Grotesk"],
+                      "headline-md": ["Inter"]
+              },
+              "fontSize": {
+                      "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                      "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                      "headline-md": ["24px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+    <style>
+        body {
+            background-color: #e0e0e0;
+            scroll-behavior: smooth;
+        }
+        .neumorphic-raised {
+            box-shadow: 6px 6px 12px #bebebe, -6px -6px 12px #ffffff;
+        }
+        .neumorphic-sunken {
+            box-shadow: inset 6px 6px 12px #bebebe, inset -6px -6px 12px #ffffff;
+        }
+        .neumorphic-active:active {
+            box-shadow: inset 2px 2px 5px #bebebe, inset -2px -2px 5px #ffffff;
+        }
+        
+        /* 建立風格二：獨立雜誌美學宋體專屬客製化 CSS 槽 */
+        .dynamic-title-style {
+            font-family: 'Noto Serif TC', 'Space Grotesk', serif !important;
+            letter-spacing: 0.18em !important;
+            font-weight: 500 !important;
+            color: #222222 !important;
+        }
+        
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+
+        /* 3D 霧面拉絲鈦金 橘色呼吸發光 */
+        @keyframes metal-orange-breathe {
+            0%, 100% {
+                filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.22))
+                        drop-shadow(-1px -1px 1.5px rgba(255, 255, 255, 0.95))
+                        drop-shadow(0 0 5px rgba(255, 94, 0, 0.35));
+            }
+            50% {
+                filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.18))
+                        drop-shadow(-1px -1px 1.5px rgba(255, 255, 255, 0.95))
+                        drop-shadow(0 0 16px rgba(255, 94, 0, 0.85))
+                        drop-shadow(0 0 28px rgba(255, 94, 0, 0.4));
+            }
+        }
+
+        .font-metal-brushed {
+            font-family: 'Space Grotesk', 'Inter', sans-serif;
+            background: linear-gradient(135deg, #ffffff 30%, #a3a3a3 75%, #737373 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.22))
+                    drop-shadow(-1px -1px 1.5px rgba(255, 255, 255, 0.95));
+            transition: filter 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        .font-metal-brushed:hover {
+            animation: metal-orange-breathe 2.4s infinite ease-in-out;
+        }
+    
+        html, body, a, button, input, textarea, [role='button'], .cursor-pointer, .flip-card {
+            cursor: none !important;
+        }
+        #custom-cursor {
+            position: fixed;
+            top: -100px;
+            left: -100px;
+            width: 24px;
+            height: 24px;
+            pointer-events: none;
+            z-index: 9999999;
+            display: block !important;
+            opacity: 1 !important;
+            will-change: transform;
+            transform: translate(-50%, -50%);
+        }
+        #custom-cursor svg {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.18s ease;
+            transform: scale(1);
+        }
+        #custom-cursor.expanded svg {
+            transform: scale(1.18);
+        }
+
+        #cursor-glow {
+            position: fixed;
+            top: -100px;
+            left: -100px;
+            width: 40px;
+            height: 40px;
+            background: radial-gradient(circle, rgba(255, 94, 0, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999998;
+            transform: translate(-50%, -50%);
+            transition: left 0.15s ease-out, top 0.15s ease-out, transform 0.2s;
+            will-change: left, top;
+        }
+        #cursor-glow.expanded {
+            transform: translate(-50%, -50%) scale(1.8);
+            background: radial-gradient(circle, rgba(255, 94, 0, 0.5) 0%, transparent 70%);
+        }
+    
+        .orange-hover-effect {
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        .orange-hover-effect:hover {
+            color: #FF5E00 !important;
+            text-shadow: 0 0 10px rgba(255, 94, 0, 0.4);
+            box-shadow: inset 5px 5px 10px #bebebe, inset -5px -5px 10px #ffffff !important;
+            transform: scale(0.98);
+        }
+        .orange-hover-effect:hover .material-symbols-outlined {
+            color: #FF5E00 !important;
+        }
+        
+        .active-tab {
+            color: #FF5E00 !important;
+            box-shadow: inset 4px 4px 8px #bebebe, inset -4px -4px 8px #ffffff !important;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes subtle-breathe {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-4px); }
+        }
+        .breathe-animation {
+            animation: subtle-breathe 6s infinite ease-in-out;
+        }
+
+        @keyframes indicator-glow {
+            0%, 100% {
+                box-shadow: 0 0 6px #ff5e00, 0 0 12px #ff8033, inset 1px 1px 2px rgba(255,255,255,0.8);
+                opacity: 0.9;
+                transform: scale(1);
+            }
+            50% {
+                box-shadow: 0 0 14px #ff5e00, 0 0 24px #ff5e00, inset 1px 1px 2px rgba(255,255,255,1);
+                opacity: 1;
+                transform: scale(1.1);
+            }
+        }
+        .online-glow-lamp {
+            background: radial-gradient(circle at 35% 35%, #ffb380 0%, #ff5e00 70%, #b34200 100%);
+            animation: indicator-glow 2.5s infinite ease-in-out;
+        }
+
+        .flip-card {
+            background-color: transparent;
+            perspective: 1000px;
+        }
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform-style: preserve-3d;
+        }
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 24px;
+        }
+        .flip-card-front {
+            background-color: #e0e0e0;
+        }
+        .flip-card-back {
+            background-color: #e0e0e0;
+            transform: rotateY(180deg);
+        }
+
+        /* 風格三：不規則流體新凝態凹槽 完美貝茲曲線自適應流動變形 */
+        .fluid-border-organic {
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            transition: all 0.9s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        .fluid-border-organic:hover {
+            border-radius: 40% 60% 70% 30% / 50% 60% 40% 50%;
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface">
+
+<nav class="sticky top-0 z-50 flex justify-between items-center max-w-6xl mx-auto bg-[#e0e0e0] rounded-2xl px-6 py-4 neumorphic-raised m-4">
+<div class="text-2xl font-black tracking-tighter text-[#212121]">PORTFOLIO</div>
+<div class="hidden md:flex gap-4">
+<a class="text-gray-600 px-4 py-2 font-inter tracking-widest uppercase text-xs font-bold transition-all orange-hover-effect rounded-full" href="javascript:void(0)" id="nav-exp-btn" data-t9n="nav_exp" onclick="showView('about')">About myself</a>
+<a class="text-gray-600 px-4 py-2 font-inter tracking-widest uppercase text-xs font-bold transition-all orange-hover-effect rounded-full" href="javascript:void(0)" id="nav-ads-btn" data-t9n="nav_ads" onclick="showView('ads')">Google Ads 案例</a>
+<a class="text-gray-600 px-4 py-2 font-inter tracking-widest uppercase text-xs font-bold transition-all orange-hover-effect rounded-full" href="javascript:void(0)" id="nav-port-btn" data-t9n="nav_port" onclick="showView('main')">Portfolio</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 px-4 py-2 rounded-full neumorphic-raised neumorphic-active text-on-surface transition-all orange-hover-effect" onclick="toggleLanguage()">
+<span class="material-symbols-outlined text-xl">language</span>
+<span class="font-label-caps text-[10px] font-bold tracking-wider" id="lang-text-display">EN / 繁中</span>
+</button>
+</div>
+</nav>
+
+<div class="block fade-in" id="view-main">
+<header class="max-w-6xl mx-auto px-margin flex flex-col items-center text-center pt-4 pb-xl relative">
+    
+    <div class="w-full max-w-xl md:max-w-2xl h-[380px] md:h-[440px] relative flex flex-col justify-end items-center overflow-visible select-none mb-6">
+        <div class="w-[280px] h-[280px] md:w-[330px] md:h-[330px] rounded-full neumorphic-sunken absolute top-0 flex items-center justify-center overflow-hidden bg-[#e0e0e0]">
+            <img alt="YA RONG TSAI Profile" class="w-full h-full object-cover pointer-events-none" style="image-rendering: -webkit-optimize-contrast; object-position: center 25%;" src="https://i.ibb.co/mrNKCKPP/background-removal-TUFIS2-Rl-Sl-ZKRm-Mj-MSM2-Y2-Fm-Mjhh-NTNh-Mz-Ri-Yz-Bi-NTFl-MTQ3-ZGQx-Nm-Ey-ZTRm-MCMy.png"/>
+        </div>
+        <div class="absolute w-full bottom-[10px] z-20 text-center pointer-events-none">
+            <h1 class="text-[3.2rem] sm:text-[4.2rem] md:text-[5rem] leading-none select-none font-metal-brushed pointer-events-auto cursor-none">YA RONG TSAI</h1>
+        </div>
+    </div>
+
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-[0.2em] mb-lg" data-t9n="hero_sub">Google Ads Specialist | Marketing Strategist | Content Creator</p>
+<div class="max-w-2xl mx-auto neumorphic-sunken p-md rounded-neumorphic mb-lg breathe-animation">
+<p class="font-body-lg text-body-lg text-on-surface" data-t9n="hero_bio">I help brands grow through performance marketing — specializing in Google Ads across e-commerce, jewellery, and fintech. Track record: HK$204 to HK$820,000+ in managed budgets, 8.89M impressions, 1,309 conversions.</p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+<div class="flex flex-col items-center">
+<span class="font-bold text-primary text-lg" id="hero-managed-spend">HK$841,000+</span>
+<span class="font-label-caps text-[10px] tracking-widest text-secondary uppercase" data-t9n="managed_stat">Managed Ad Spend</span>
+</div>
+<div class="flex flex-col items-center border-x border-black/5">
+<span class="font-bold text-primary text-lg">8.89M</span>
+<span class="font-label-caps text-[10px] tracking-widest text-secondary uppercase" data-t9n="stat_impr">Total Impressions</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-bold text-primary text-lg">3</span>
+<span class="font-label-caps text-[10px] tracking-widest text-secondary uppercase" data-t9n="stat_industries">Industries</span>
+</div>
+</div>
+</div>
+
+<div class="flex flex-col sm:flex-row gap-4 mt-2 justify-center w-full">
+    <a class="neumorphic-raised px-xl py-md rounded-full font-label-caps text-label-caps uppercase tracking-widest bg-[#e0e0e0] text-primary transition-all orange-hover-effect flex items-center justify-center" data-t9n="hero_cta" href="#contact">Let's Talk</a>
+    <a id="dynamic-resume-btn" class="neumorphic-raised px-xl py-md rounded-full font-label-caps text-label-caps uppercase tracking-widest bg-[#e0e0e0] text-secondary transition-all orange-hover-effect flex items-center justify-center gap-2 group cursor-none" href="https://drive.google.com/uc?export=download&id=1Oku1jaxJqfQWYo4LibwiuMgWpBsFu6UC" download="Yarong's Resume.pdf" target="_blank">
+        <span class="material-symbols-outlined text-lg group-hover:-translate-y-1 transition-transform">download</span>
+        <span data-t9n="hero_resume">Download Resume</span>
+    </a>
+</div>
+</header>
+
+<section class="py-xl" id="skills">
+<div class="max-w-6xl mx-auto px-margin">
+<div class="flex flex-col md:flex-row gap-xl">
+<div class="md:w-1/3">
+<h2 class="text-3xl uppercase mb-md select-none inline-block py-1 dynamic-title-style" data-t9n="sec_exp">專業領域</h2>
+<div class="neumorphic-sunken p-lg rounded-neumorphic">
+<h4 class="font-label-caps text-label-caps mb-sm text-primary" data-t9n="skill_major_lbl">MAJOR</h4>
+<p class="font-headline-md text-headline-md text-on-surface" data-t9n="skill_major_val">Media & Communications</p>
+</div>
+</div>
+<div class="md:w-2/3">
+<h2 class="text-3xl uppercase mb-md select-none inline-block py-1 dynamic-title-style" data-t9n="sec_tech">專業技能</h2>
+<div class="flex flex-wrap gap-md">
+<span class="neumorphic-raised px-md py-sm rounded-full font-label-caps text-label-caps hover:scale-105 transition-transform" data-t9n="skill_1">Content Writing</span>
+<span class="neumorphic-raised px-md py-sm rounded-full font-label-caps text-label-caps hover:scale-105 transition-transform" data-t9n="skill_2">Google Ads</span>
+<span class="neumorphic-raised px-md py-sm rounded-full font-label-caps text-label-caps hover:scale-105 transition-transform" data-t9n="skill_3">旅宿管理</span>
+<span class="neumorphic-raised px-md py-sm rounded-full font-label-caps text-label-caps hover:scale-105 transition-transform" data-t9n="skill_4">協助網頁設計</span>
+<span class="neumorphic-raised px-md py-sm rounded-full font-label-caps text-label-caps hover:scale-105 transition-transform" data-t9n="skill_5">AI工具應用</span>
+<span class="neumorphic-raised px-md py-sm rounded-full font-label-caps text-label-caps hover:scale-105 transition-transform" data-t9n="skill_6">Data Analytics</span>
+<span class="neumorphic-raised px-md py-sm rounded-full font-label-caps text-label-caps hover:scale-105 transition-transform" data-t9n="skill_7">Project Management</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="max-w-6xl mx-auto px-margin py-xl" id="portfolio">
+<div class="flex justify-center mb-xl select-none">
+    <h2 class="text-4xl uppercase text-center py-1 dynamic-title-style" data-t9n="sec_port">精選作品</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+
+    <!-- 專案一卡片 -->
+    <div class="flip-card h-[380px] cursor-pointer group">
+        <div class="flip-card-inner">
+            <div class="flip-card-front bg-[#e0e0e0] neumorphic-raised flex flex-col justify-between items-center text-center p-6">
+                <div class="w-14 h-14 rounded-full neumorphic-sunken flex items-center justify-center mt-6 text-gray-700"><span class="material-symbols-outlined text-2xl">rocket_launch</span></div>
+                <div class="flex flex-col gap-2 px-2">
+                    <h3 class="text-xl font-bold text-gray-800 leading-snug" data-t9n="p1_title">RelaxOnCup 群眾募資上市</h3>
+                    <p class="text-[11px] uppercase tracking-widest text-[#FF5E00] font-semibold" data-t9n="p1_role">數位行銷與群眾募資策略師</p>
+                </div>
+                <div class="mb-2 w-8 h-8 rounded-full neumorphic-sunken flex items-center justify-center text-gray-400 group-hover:text-[#FF5E00] transition-colors"><span class="material-symbols-outlined text-sm">360</span></div>
+            </div>
+            <div class="flip-card-back bg-[#e0e0e0] neumorphic-sunken flex flex-col justify-between p-5 text-left text-xs text-gray-600">
+                <h3 class="font-bold text-base text-[#FF5E00] text-center mb-2" data-t9n="p1_title">RelaxOnCup 群眾募資上市</h3>
+                <div class="space-y-2 overflow-y-auto pr-1 text-[11px] sm:text-xs">
+                    <p class="leading-relaxed"><span class="font-bold text-primary" data-t9n="lbl_role">【角色】</span><span data-t9n="p1_back_role">數位行銷與群眾募資策略師</span></p>
+                    <p class="leading-relaxed"><span class="font-bold text-primary" data-t9n="lbl_strat">【策略】</span><span data-t9n="p1_back_strat">市場前期問卷調延、受眾分析與精準廣告投放</span></p>
+                    <p class="leading-relaxed"><span class="font-bold text-primary" data-t9n="lbl_res">【成效】</span><span data-t9n="p1_back_res">引爆社群話題，達成 0 到 1 的電商市場滲透與亮眼募資成效。</span></p>
+                </div>
+                <div class="mt-2 text-center select-none pt-1">
+                    <a href="https://www.zeczec.com/projects/relaxoncup" target="_blank" class="px-4 py-1.5 rounded-full text-[10px] font-bold tracking-widest text-[#FF5E00] neumorphic-raised hover:scale-95 active:shadow-inner transition-all flex items-center justify-center gap-1 w-fit mx-auto cursor-none">
+                        <span data-t9n="btn_view_live">查看實案連結</span>
+                        <span class="material-symbols-outlined text-xs">open_in_new</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 專案二卡片 -->
+    <div class="flip-card h-[380px] cursor-pointer group">
+        <div class="flip-card-inner">
+            <div class="flip-card-front bg-[#e0e0e0] neumorphic-raised flex flex-col justify-between items-center text-center p-6">
+                <div class="w-14 h-14 rounded-full neumorphic-sunken flex items-center justify-center mt-6 text-gray-700"><span class="material-symbols-outlined text-2xl">ads_click</span></div>
+                <div class="flex flex-col gap-2 px-2">
+                    <h3 class="text-xl font-bold text-gray-800 leading-snug" data-t9n="p2_title">企業級 Google Ads 廣告操盤</h3>
+                    <p class="text-[11px] uppercase tracking-widest text-[#FF5E00] font-semibold" data-t9n="p2_role">廣告投放專家 / 數據行銷專家</p>
+                </div>
+                <div class="mb-2 w-8 h-8 rounded-full neumorphic-sunken flex items-center justify-center text-gray-400 group-hover:text-[#FF5E00] transition-colors"><span class="material-symbols-outlined text-sm">360</span></div>
+            </div>
+            <div class="flip-card-back bg-[#e0e0e0] neumorphic-sunken flex flex-col justify-between p-5 text-left text-xs text-gray-600">
+                <h3 class="font-bold text-base text-[#FF5E00] text-center mb-2" data-t9n="p2_title">企業級 Google Ads 廣告操盤</h3>
+                <div class="space-y-2 overflow-y-auto pr-1 text-[11px] sm:text-xs">
+                    <p class="leading-relaxed"><span class="font-bold text-primary" data-t9n="lbl_role">【角色】</span><span data-t9n="p2_back_role">廣告投放專家 / 數據行銷專家</span></p>
+                    <p class="leading-relaxed"><span class="font-bold text-primary" data-t9n="lbl_strat">【策略】</span><span data-t9n="p2_back_strat">跨電商、珠寶、金融科技等大型跨國廣告帳戶結構佈局與出價優化</span></p>
+                    <p class="leading-relaxed"><span class="font-bold text-primary" data-t9n="lbl_res">【成效】</span><span data-t9n="p2_back_res">實戰管理 HK$841,000+ 企業總預算，運用精準出價策略與受眾定位，累計斬獲 8.89M 曝光數與 1,309 次高價值商業轉換實績。</span></p>
+                </div>
+                <div class="mt-2 text-center select-none pt-1">
+                    <button onclick="showView('ads')" class="px-4 py-1.5 rounded-full text-[10px] font-bold tracking-widest text-[#FF5E00] neumorphic-raised hover:scale-95 active:shadow-inner transition-all flex items-center justify-center gap-1 w-fit mx-auto cursor-none">
+                        <span data-t9n="btn_view_metrics">檢視成效指標</span>
+                        <span class="material-symbols-outlined text-xs">analytics</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 專案三卡片 -->
+    <div class="flip-card h-[380px] cursor-pointer group">
+        <div class="flip-card-inner">
+            <div class="flip-card-front bg-[#e0e0e0] neumorphic-raised flex flex-col justify-between items-center text-center p-6">
+                <div class="w-14 h-14 rounded-full neumorphic-sunken flex items-center justify-center mt-6 text-gray-700"><span class="material-symbols-outlined text-2xl">language_international</span></div>
+                <div class="flex flex-col gap-2 px-2">
+                    <h3 class="text-xl font-bold text-gray-800 leading-snug" data-t9n="p3_title">跨境電子商務與代購</h3>
+                    <p class="text-[11px] uppercase tracking-widest text-[#FF5E00] font-semibold" data-t9n="p3_role">跨境電商創辦人與營運專員</p>
+                </div>
+                <div class="mb-2 w-8 h-8 rounded-full neumorphic-sunken flex items-center justify-center text-gray-400 group-hover:text-[#FF5E00] transition-colors"><span class="material-symbols-outlined text-sm">360</span></div>
+            </div>
+            <div class="flip-card-back bg-[#e0e0e0] neumorphic-sunken flex flex-col justify-between p-5 text-left text-xs text-gray-600">
+                <h3 class="font-bold text-base text-[#FF5E00] text-center mb-2" data-t9n="p3_title">跨境電子商務與代購</h3>
+                <div class="space-y-2 overflow-y-auto pr-1 text-[11px] sm:text-xs">
+                    <p class="leading-relaxed"><span class="font-bold text-primary" data-t9n="lbl_role">【角色】</span><span data-t9n="p3_back_role">跨境電商創辦人與營運專員</span></p>
+                    <p class="leading-relaxed"><span class="font-bold text-primary" data-t9n="lbl_strat">【策略】</span><span data-t9n="p3_back_strat">主導星、日、泰多國市場選品採購、國際敏捷物流對接與自主供應鏈架構</span></p>
+                    <p class="leading-relaxed"><span class="font-bold text-primary" data-t9n="lbl_res">【成效】</span><span data-t9n="p3_back_res">打通全鏈路自動出貨流程，實現私域流量高黏著度 CRM 客群全週期自營品牌運作。</span></p>
+                </div>
+                <div class="mt-2 text-center select-none pt-1 relative">
+                    <button onclick="copyEmailTrigger(this)" class="px-4 py-1.5 rounded-full text-[10px] font-bold tracking-widest text-[#FF5E00] neumorphic-raised hover:scale-95 active:shadow-inner transition-all flex items-center justify-center gap-1 w-fit mx-auto cursor-none relative">
+                        <span id="email-btn-text" data-t9n="btn_talk_biz">洽談電商合作</span>
+                        <span class="material-symbols-outlined text-xs">chat</span>
+                    </button>
+                    <div id="email-toast-box" class="absolute bottom-10 left-1/2 -translate-x-1/2 bg-[#e0e0e0] text-primary text-[10px] font-bold px-3 py-2 rounded-xl shadow-md border border-white/40 opacity-0 scale-90 pointer-events-none transition-all duration-300 z-50 flex items-center gap-1 whitespace-nowrap">
+                        <span class="text-gray-700 font-mono select-all">open7496@gmail.com</span>
+                        <span id="toast-msg-tag" class="text-[#FF5E00] ml-1 bg-white/50 px-1 py-0.5 rounded">點擊複製</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<section class="max-w-3xl mx-auto px-margin py-xl" id="contact">
+<div class="neumorphic-raised rounded-neumorphic p-8">
+<div class="flex items-center gap-md border-b border-white/20 pb-sm mb-sm">
+    
+<div class="w-10 h-10 rounded-full neumorphic-sunken flex items-center justify-center bg-[#e0e0e0] select-none">
+    <div class="relative flex items-center justify-center w-5 h-5">
+        <div class="absolute w-5 h-5 rounded-full bg-[#ff5e00] opacity-30 animate-ping" style="animation-duration: 3s;"></div>
+        <div class="w-3 h-3 rounded-full online-glow-lamp z-10"></div>
+    </div>
+</div>
+
+<div>
+<h3 class="font-headline-md text-headline-md text-sm" data-t9n="form_title">Let's Talk</h3>
+<p class="text-[10px] text-secondary" data-t9n="form_status">Active now</p>
+</div>
+</div>
+<form action="https://formspree.io/f/meebeovz" class="flex flex-col gap-md" id="contact-form" method="POST">
+<div class="hidden neumorphic-sunken p-4 rounded-neumorphic mb-4 text-green-600 font-label-caps text-xs text-center border border-green-200/50" data-fs-success="">Message sent successfully!</div>
+<div class="hidden neumorphic-sunken p-4 rounded-neumorphic mb-4 text-error font-label-caps text-xs text-center border border-error/20" data-fs-error="">Something went wrong. Please try again.</div>
+<div class="neumorphic-sunken rounded-full px-md py-3 transition-all duration-300 focus-within:shadow-glow">
+<input class="bg-transparent border-none focus:ring-0 w-full text-on-surface placeholder-secondary text-sm" data-fs-field="email" data-t9n="ph_email" name="email" placeholder="Your Email Address" required="" type="email"/>
+</div>
+<div class="neumorphic-sunken rounded-full px-md py-3 transition-all duration-300 focus-within:shadow-glow">
+<input class="bg-transparent border-none focus:ring-0 w-full text-on-surface placeholder-secondary text-sm" data-fs-field="subject" data-t9n="ph_subject" name="subject" placeholder="Subject Line" required="" type="text"/>
+</div>
+<div class="neumorphic-sunken rounded-neumorphic px-md py-3 transition-all duration-300 focus-within:shadow-glow">
+<textarea class="bg-transparent border-none focus:ring-0 w-full text-on-surface placeholder-secondary min-h-[120px] resize-none text-sm" data-fs-field="message" data-t9n="ph_msg" name="message" placeholder="How can I help with your project today?" required></textarea>
+</div>
+<div class="flex justify-end pt-2">
+<button class="neumorphic-raised w-14 h-14 rounded-full flex items-center justify-center bg-[#e0e0e0] text-primary transition-all orange-hover-effect" data-fs-submit-btn="" type="submit">
+<span class="material-symbols-outlined text-2xl">send</span>
+</button>
+</div>
+</form>
+</div>
+</section>
+</div>
+
+<!-- 🌐 頁面 2: About Myself 獨立自我介紹頁面 -->
+<div class="hidden fade-in min-h-[80vh]" id="view-about">
+<section class="max-w-6xl mx-auto px-margin py-xl">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- 🌟 修正成功：時空抽離動態特效（滑鼠移入時，真實人物與包包優化淡出，天衣無縫渲染您提供的純公路背景照！） 🌟 -->
+        <div class="lg:col-span-5 flex justify-center items-center select-none w-full">
+            <div class="w-[340px] md:w-[360px] h-[380px] md:h-[400px] neumorphic-sunken p-5 flex items-center justify-center rounded-[2.5rem] group/avatar relative overflow-hidden">
+                <div class="w-full h-full overflow-hidden fluid-border-organic shadow-lg relative bg-[#e0e0e0]">
+                    <!-- 圖 1：原本靜止狀態的坐姿照 (人物在場) -->
+                    <img class="w-full h-full object-cover absolute inset-0 transition-all duration-700 ease-out group-hover/avatar:opacity-0 group-hover/avatar:scale-95" src="https://i.ibb.co/8nQDWCf3/DSC-5758-01-1.jpg" alt="Ya Rong Tsai Sitting Portrait">
+                    <!-- 圖 2：滑鼠懸停時完美淡入、由您提供的真實無人純公路照！ 🌟 -->
+                    <img class="w-full h-full object-cover absolute inset-0 opacity-0 scale-105 transition-all duration-700 ease-out group-hover/avatar:opacity-100 group-hover/avatar:scale-100" src="https://i.ibb.co/d06pB6hT/magic-edit-TUFIT0lt-Mm-ZMMzgj-MSNi-ODg5-MGU0-Yj-Aw-Y2-Y5-MGM1-Nj-Y3-MGNm-Yz-Qy-Mz-Fm-Nm-Nl-Yi-Mz-Nj-Uz-Iy.jpg" alt="Pure Serene Road Landscape Background">
+                </div>
+            </div>
+        </div>
+
+        <div class="lg:col-span-7 w-full">
+            <div class="neumorphic-raised p-lg md:p-xl rounded-neumorphic hover:scale-[1.001] transition-all duration-300">
+                <div class="font-body-md text-on-surface-variant space-y-5 leading-relaxed text-justify text-[15px] md:text-[16px] max-w-3xl mx-auto">
+                    <p class="font-bold text-primary text-base tracking-wide border-b border-black/5 pb-2" data-t9n="story_p1">如果你會看到這個頁面的話，我想簡單的介紹我自己…</p>
+                    <p data-t9n="story_p2">嗨，我來自台灣，一個亞熱帶島國。如果要把最重要的那部分的自己跟你分享的話，我會從 2016 開始說起。</p>
+                    <p data-t9n="story_p3">2016 年，被視為最後一個單純的年代，當時我正值十八歲，拿到第一支智慧型手機、有著流量很少的網路。第一次當背包客，花了兩個月的時間從阿爾巴尼亞搭便車去羅馬，每到一個城市就拿一份紙本地圖，每一條路都是嘴巴問出來的。當時的夏天好像過得很慢，資源也少了很多，沒有網路的時候，我記得人們都看著對方的眼睛說話，要去一個想去的地方要走很久。</p>
+                    <p data-t9n="story_p4" class="italic text-primary font-medium">每個人的心中都有自己的羅馬，於是那之後每個夏天我都花兩個月的時間去一個特別遠的地方找我的羅馬。十年來我在中東、東歐和南亞旅居，每一個城市都承載我的想像力和一部份的自己。我一直相信一個人在年輕的時候需要擁有最有限的資源，去最遠的地方。</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+</div>
+
+<!-- 🌐 頁面 3: Google Ads Case Study 獨立廣告分頁 -->
+<div class="hidden fade-in min-h-screen" id="view-ads">
+<div class="max-w-6xl mx-auto px-margin py-xl">
+<div class="flex justify-start mb-lg">
+<button class="flex items-center gap-2 px-6 py-3 rounded-full neumorphic-raised orange-hover-effect group transition-all font-bold text-xs" onclick="showView('main')">
+<span class="material-symbols-outlined transition-transform group-hover:-translate-x-1">arrow_back</span>
+<span class="font-label-caps text-xs tracking-widest" data-t9n="btn_back">Back</span>
+</button>
+</div>
+<section class="w-full bg-[#e0e0e0] py-xl">
+<h2 class="font-headline-xl text-headline-xl mb-lg text-center text-gradient" data-t9n="ads_title">Google Ads Case Studies</h2>
+<div class="flex flex-col items-center gap-lg mb-xl">
+<div class="flex neumorphic-sunken p-1 rounded-full">
+<button class="px-3 py-1 rounded-full font-label-caps text-[9px] tracking-widest active-tab" data-currency="HKD" onclick="switchCurrency('HKD')">HK$</button>
+<button class="px-3 py-1 rounded-full font-label-caps text-[9px] tracking-widest text-secondary" onclick="switchCurrency('TWD')">NT$</button>
+<button class="px-3 py-1 rounded-full font-label-caps text-[9px] tracking-widest" data-currency="USD" onclick="switchCurrency('USD')">US$</button>
+</div>
+<div class="flex neumorphic-raised p-1 rounded-full w-full max-w-lg">
+<button class="flex-1 py-2 rounded-full font-label-caps text-[10px] tracking-widest active-tab orange-hover-effect" data-budget="small" data-t9n="tier_small" onclick="switchBudget('small')">小資預算</button>
+<button class="flex-1 py-2 rounded-full font-label-caps text-[10px] tracking-widest orange-hover-effect" data-budget="mid" data-t9n="tier_mid" onclick="switchBudget('mid')">中型預算</button>
+<button class="flex-1 py-2 rounded-full font-label-caps text-[10px] tracking-widest orange-hover-effect" data-budget="large" data-t9n="tier_large" onclick="switchBudget('large')">大型預算</button>
+</div>
+</div>
+<div id="ads-content">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-lg">
+<div class="neumorphic-raised p-lg rounded-neumorphic text-center">
+<h3 class="font-label-caps text-secondary mb-2 uppercase tracking-widest text-[10px]" data-t9n="kpi_spend">月花費</h3>
+<p class="font-headline-md text-primary" id="val-spend">HK$204</p>
+</div>
+<div class="neumorphic-raised p-lg rounded-neumorphic text-center" style="animation-delay: 0.2s">
+<h3 class="font-label-caps text-secondary mb-2 uppercase tracking-widest text-[10px]" data-t9n="kpi_clicks" id="kpi-label-2">點擊數</h3>
+<p class="font-headline-md text-primary" id="val-2">240</p>
+</div>
+<div class="neumorphic-raised p-lg rounded-neumorphic text-center" style="animation-delay: 0.4s">
+<h3 class="font-label-caps text-secondary mb-2 uppercase tracking-widest text-[10px]" data-t9n="kpi_impressions" id="kpi-label-3">曝光數</h3>
+<p class="font-headline-md text-primary" id="val-3">38,800</p>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-lg items-start">
+<div class="neumorphic-sunken p-lg rounded-neumorphic overflow-hidden">
+<h4 class="font-label-caps text-primary mb-md tracking-wider text-sm font-bold" data-t9n="tbl_title">成效拆解</h4>
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body-md text-xs" id="breakdown-table">
+<thead class="border-b border-black/10">
+<tr id="table-head">
+<th class="py-2 font-label-caps uppercase" data-t9n="th_metric">指標</th>
+<th class="py-2 font-label-caps uppercase text-right" data-t9n="th_value">數值</th>
+</tr>
+</thead>
+<tbody class="text-on-surface-variant" id="table-body"></tbody>
+</table>
+</div>
+</div>
+<div class="neumorphic-raised p-lg rounded-neumorphic border-l-4 border-[#FF5E00]">
+<div class="flex items-center gap-2 mb-sm text-[#FF5E00]">
+<div class="w-10 h-10 rounded-full neumorphic-sunken flex items-center justify-center text-gray-700">
+    <span class="material-symbols-outlined text-lg">auto_awesome</span>
+</div>
+<h4 class="font-label-caps tracking-widest text-xs font-bold" data-t9n="insight_lbl">亮點洞察</h4>
+</div>
+<p class="font-body-md text-on-surface text-sm leading-relaxed" id="val-insight"></p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+
+<footer class="w-full mt-12 py-12 flex flex-col items-center gap-6 px-8 border-t border-white/10 text-center">
+<p class="font-inter text-[10px] tracking-widest uppercase font-medium text-gray-500" data-t9n="foot_copy">© 2026 YA RONG TSAI</p>
+</footer>
+
+<div id="cursor-glow"></div>
+<div id="custom-cursor">
+<svg fill="black" viewBox="0 0 24 24">
+<path d="M5 3L18 15L12 15L14.5 21L12.5 22L10 16H5V3Z"></path>
+</svg>
+</div>
+
+<script>
+        // 雙語翻譯字典
+        const translations = {
+            en: {
+                nav_exp: 'About myself', nav_ads: 'Case Studies', nav_port: 'Portfolio', hero_resume: 'Download Resume',
+                hero_sub: 'Google Ads Specialist | Marketing Strategist | Content Creator',
+                hero_bio: 'I help brands grow through performance marketing — specializing in Google Ads across e-commerce, jewellery, and fintech. Track record: HK$204 to HK$820,000+ in managed budgets, 8.89M impressions, 1,309 conversions.',
+                hero_cta: "Let's Talk", managed_stat: 'Managed Ad Spend',
+                stat_impr: 'Total Impressions', stat_industries: 'Industries',
+                sec_work: 'My Story', 
+                
+                // 標題英文化對應
+                sec_exp: 'Expertise', sec_tech: 'Technical Skills', sec_port: 'Selected Projects',
+                
+                // 結構化按鈕標籤
+                lbl_role: '【Role】', lbl_strat: '【Strategy】', lbl_res: '【Result】',
+                btn_view_live: 'View Live Project', btn_view_metrics: 'View Performance Metrics', btn_talk_biz: 'Discuss E-commerce Ops',
+
+                story_p1: 'If you come across this page, I would love to briefly introduce myself…',
+                story_p2: 'Hi, I’m from Taiwan, a subtropical country. If I were to share the most essential part of who I am, my story would begin in 2016.',
+                story_p3: '2016 is often remembered as the last era of pure simplicity. I was eighteen then, with my very first smartphone and limited data plan. That year, I went backpacking for the first time, spending two months hitchhiking from Albania to Rome. In every city, I held a paper map, and every single direction was found by asking strangers. Back then, summers seemed to be super slow, and resources were far more limited. I remember that when there was no internet, people looked into each other\'s eyes when they spoke, and getting to a destination took a long, mindful walk.',
+                story_p4: 'Everyone has their own Rome in their heart, and so, every summer since, I have dedicated two months to traveling to the most distant corners of the world, searching for my own Rome. For the past decade, I have lived and traveled across the Middle East, Eastern Europe, and South Asia. Every city has carried a piece of my imagination and shaped a part of who I am. I have always believed that when we are young, we should have the most limited resources and walk to the furthest places.',
+
+                skill_major_lbl: 'MAJOR', skill_major_val: 'Media & Communications',
+                skill_1: 'Content Writing', skill_2: 'Google Ads', 
+                skill_3: 'Guest Facility Operations', 
+                skill_4: 'Web Design Assistance', 
+                skill_5: 'AI Tools Integration', 
+                skill_6: 'Data Analytics', skill_7: 'Project Management',
+                
+                p1_title: 'RelaxOnCup Crowdfunding Launch', 
+                p1_role: 'Digital Marketer & Sourcing Specialist',
+                p1_back_role: 'Digital Marketer & Crowdfunding Strategist',
+                p1_back_strat: 'Pre-launch survey market research, audience analysis, and precision ad delivery.',
+                p1_back_res: 'Ignited social engagement, achieving a 0-to-1 e-commerce market footprint and remarkable fundraising success.',
+                
+                p2_title: 'Enterprise Google Ads Manipulation', 
+                p2_role: 'Ad Optimization & Data Specialist',
+                p2_back_role: 'Ad Optimization & Performance Marketing Specialist',
+                p2_back_strat: 'Cross-border account structuring and automated bidding optimization across e-commerce, jewellery, and fintech.',
+                p2_back_res: 'Managed a substantial enterprise budget of HK$841,000+, securing 8.89M impressions and 1,309 valuable acquisitions.',
+                
+                p3_title: 'Cross-Border E-commerce & Sourcing', 
+                p3_role: 'Cross-Border E-commerce Founder & Operations Specialist',
+                p3_back_role: 'Cross-Border E-commerce Founder & Lead Operator',
+                p3_back_strat: 'Product trend procurement, CRM customer retention, and agile logistics setup across SG, JP, and TH markets.',
+                p3_back_res: 'Fully orchestrated an independent brand, achieving full-cycle automated fulfillment and cross-border expansion.',
+                
+                form_title: "Let's Talk", form_status: 'Active now',
+                ph_email: 'Your Email Address', ph_subject: 'Subject Line', ph_msg: 'How can I help with your project today?',
+                foot_copy: '© 2026 YA RONG TSAI | All data presented is genuine, with client confidentiality strictly maintained.',
+                btn_back: 'Back', ads_title: 'Google Ads Case Studies',
+                tier_small: 'Small Budget', tier_mid: 'Mid Budget', tier_large: 'Large Budget',
+                kpi_spend: 'Monthly Spend', kpi_clicks: 'Clicks', kpi_impr: 'Impressions', kpi_views: 'Views', kpi_conversions: 'Conversions',
+                tbl_title: 'Performance Breakdown', th_metric: 'Metric', th_value: 'Value', insight_lbl: 'HIGHLIGHT INSIGHT',
+                insight_s: 'With only HK$204 in spend, achieved 240 clicks and 38,800 impressions across Display and Search. Avg. CPC HK$0.85 demonstrates strong cost efficiency at minimal budget.',
+                insight_m: 'YouTube Video Ads achieved 95.71% viewability and 30.34% interaction rate — far above industry benchmarks. 164,354 video views effectively built brand awareness for the jewellery brand.',
+                insight_l: 'Managed HK$820,000 across Search, Display, and Video Ads. Achieved 8,890,000 impressions, 94,600 clicks, and 1,309 conversions at a 1.38% conversion rate — full enterprise-scale campaign management.',
+                row_display_clicks: 'Display Clicks', row_search_clicks: 'Search Clicks', row_display_impr_: 'Display Impr.', row_search_impr_: 'Search Impr.',
+                row_avg__cpc: 'Avg. CPC', row_int__rate: 'Interaction Rate', row_display_cpc: 'Display CPC', row_search_int__rate: 'Search Int. Rate',
+                row_viewable_impr_: 'Viewable Impr.', row_viewability: 'Viewability', row_interactions: 'Interactions', row_bidding_strategy: 'Bidding Strategy',
+                row_impressions: 'Impressions', row_conv__rate: 'Conv. Rate'
+            },
+            zh: {
+                nav_exp: '關於我', 
+                nav_ads: '廣告案例', nav_port: '作品集', hero_resume: '下載履歷',
+                hero_sub: 'Google Ads 廣告投放專家 | 行銷策略師 | 內容創作者',
+                hero_bio: '我幫助品牌透過精準廣告投放實現業績增長——專注於 Google Ads，跨電商、珠寶、金融科技行業。管理預算從 HK$204 到 HK$820,000+，累計 8.89M 曝光與 1,309 次轉換。',
+                hero_cta: '立即聯繫', managed_stat: '廣告累計管理金額',
+                stat_impr: '總曝光數', stat_industries: '跨產業案例',
+                sec_work: '我的故事', 
+                
+                sec_exp: '專業領域', sec_tech: '專業技能', sec_port: '精選作品',
+                lbl_role: '【角色】', lbl_strat: '【策略】', lbl_res: '【成效】',
+                btn_view_live: '查看實案連結', btn_view_metrics: '檢視成效指標', btn_talk_biz: '洽談電商合作',
+
+                story_p1: '如果你會看到這個頁面的話，我想簡單的介紹我自己…',
+                story_p2: '嗨，我來自台灣，一個亞熱帶島國。如果要把最重要的那部分的自己跟你分享的話，我會從 2016 開始說起。',
+                story_p3: '2016 年，被視為最後一個單純的年代，當時我正值十八歲，拿到第一支智慧型手機、有著流量很少的網路。第一次當背包客，花了兩個月的時間從阿爾巴尼亞搭便車去羅馬，每到一個城市就拿一份紙本地圖，每一條路都是嘴巴問出來的。當時的夏天好像過得很慢，資源也少了很多，沒有網路的時候，我記得人們都看著對方的眼睛說話，要去一個想去的地方要走很久。',
+                story_p4: '每個人的心中都有自己的羅馬，於是那之後每個夏天我都花兩個月的時間去一個特別遠的地方找我的羅馬。十年來我在中東、東歐和南亞旅居，每一個城市都承載我的想像力和一部份的自己。我一直相信一個人在年輕的時候需要擁有最有限的資源，去最遠的地方。',
+
+                skill_major_lbl: '主修', skill_major_val: '媒體與傳播',
+                skill_1: '內容撰寫', skill_2: 'Google 廣告', 
+                skill_3: '旅宿管理', 
+                skill_4: '協助網頁設計', 
+                skill_5: 'AI工具應用', 
+                skill_6: '數據分析', skill_7: '專案管理',
+                
+                p1_title: 'RelaxOnCup 輕鬆杯群眾募資上市', 
+                p1_role: '數位行銷與群眾募資策略師',
+                p1_back_role: '數位行銷與群眾募資策略師',
+                p1_back_strat: '市場前期問卷調延、受眾分析與精準廣告投放',
+                p1_back_res: '引爆社群話題，達成 0 到 1 的電商市場滲透與亮眼募資成效。',
+                
+                p2_title: '企業級 Google Ads 廣告操盤', 
+                p2_role: '廣告投放專家 / 數據行銷專家',
+                p2_back_role: '廣告投放專家 / 數據行銷專家',
+                p2_back_strat: '跨電商、珠寶、金融科技等大型跨國廣告帳戶結構佈局與出價優化',
+                p2_back_res: '實戰管理 HK$841,000+ 企業總預算，運用精準出價策略與受眾定位，累計斬獲 8.89M 曝光數與 1,309 次高價值商業轉換實績。',
+                
+                p3_title: '跨境電子商務與代購', 
+                p3_role: '跨境電商創辦人與營運專員',
+                p3_back_role: '跨境電商創辦人與獨立營運專員',
+                p3_back_strat: '主導星、日、泰多國市場選品採購、國際敏捷物流對接與自主供應鏈架構',
+                p3_back_res: '打通全鏈路自動出貨流程，實現私域流量高黏著度 CRM 客群全週期自營品牌運作。',
+                
+                form_title: '與我聯絡', form_status: '目前上線',
+                ph_email: '你的電子信箱', ph_subject: '標題', ph_msg: '今天有什麼我可以幫忙的？',
+                foot_copy: '© 2026 YA RONG TSAI | 所有數據皆為真實呈現，僅保留客戶隱私。',
+                btn_back: '返回', ads_title: 'Google Ads 廣告案例',
+                tier_small: '小資預算', tier_mid: '中型預算', tier_large: '大型預算',
+                kpi_spend: '月花費', kpi_clicks: '點擊數', kpi_impr: '曝光數', kpi_views: '觀看次數', kpi_conversions: '轉換次數',
+                tbl_title: '成效拆解', th_metric: '指標', th_value: '數值', insight_lbl: '亮點洞察',
+                insight_s: '僅以 HK$204 的預算，在多媒體廣告與搜尋廣告中獲得 240 次點擊和 38,800 次曝光。平均 CPC 為 HK$0.85，展現了在極低預算下的高成本效益。',
+                insight_m: 'YouTube 影片廣告達成了 95.71% 的可視率和 30.34% 的互動率——遠高於業界平均。164,354 次影片觀看有效地為珠寶品牌建立了品牌知名度。',
+                insight_l: '管理高達 HK$820,000 的預算，涵蓋搜尋、多媒體廣告與影片廣告。達成 8,890,000次曝光、94,600 次點擊 與 1,309 次轉換，轉換率為 1.38%——展現企業級的完整廣告活動管理能力。',
+                row_display_clicks: '多媒體廣告點擊數', row_search_clicks: '搜尋點擊數', row_display_impr_: '多媒體廣告曝光數', row_search_impr_: '搜尋曝光數',
+                row_avg__cpc: '平均點擊成本', row_int__rate: '互動率', row_display_cpc: '多媒體廣告 CPC', row_search_int__rate: '搜尋互動率',
+                row_viewable_impr_: '可見曝光數', row_viewability: '可視率', row_interactions: '互動次數', row_bidding_strategy: '出價策略',
+                row_impressions: '曝光數', row_conv__rate: '轉換率'
+            }
+        };
+
+        let currentLang = 'en';
+        let currentCurrency = 'HKD';
+        let currentBudget = 'small';
+        const exchangeRates = { 'HKD': 1, 'TWD': 3.9, 'USD': 0.13 };
+        const currencySymbols = { 'HKD': 'HK$', 'TWD': 'NT$', 'USD': 'US$' };
+
+        const adsData = {
+            small: { spend: 204, kpi2_val: 240, kpi2_lbl: 'kpi_clicks', kpi3_val: 38800, kpi3_lbl: 'kpi_impr', insight: 'insight_s', table: [{m: 'row_display_clicks', v: '185'}, {m: 'row_search_clicks', v: '55'}, {m: 'row_display_impr_', v: '31,300'}, {m: 'row_search_impr_', v: '7,500'}, {m: 'row_avg__cpc', v: 0.85, isCurrency: true}, {m: 'row_int__rate', v: '0.62%'}] },
+            mid: { spend: 5400, kpi2_val: 164354, kpi2_lbl: 'kpi_views', kpi3_val: 251000, kpi3_lbl: 'kpi_impr', insight: 'insight_m', table: [{m: 'row_viewable_impr_', v: '240,000'}, {m: 'row_viewability', v: '95.71%'}, {m: 'row_interactions', v: '50,120'}, {m: 'row_int__rate', v: '30.34%'}, {m: 'row_bidding_strategy', v: 'Target CPV'}] },
+            large: { spend: 820000, kpi2_val: 1309, kpi2_lbl: 'kpi_conversions', kpi3_val: 8890000, kpi3_lbl: 'kpi_impr', insight: 'insight_l', table: [{m: 'row_impressions', v: '8,890,000'}, {m: 'row_display_clicks', v: '94,600'}, {m: 'row_avg__cpc', v: 8.66, isCurrency: true}, {m: 'row_conv__rate', v: '1.38%'}, {m: 'row_bidding_strategy', v: 'tROAS / tCPA'}] }
+        };
+
+        function formatCurrency(amount) {
+            const rate = exchangeRates[currentCurrency];
+            return `${currencySymbols[currentCurrency]}${(amount * rate).toLocaleString(undefined, { maximumFractionDigits: 2 })}`;
+        }
+
+        // 一鍵複製 Email 並觸發新擬態提示窗的交互大腦
+        function copyEmailTrigger(btnElement) {
+            const emailText = "open7496@gmail.com";
+            navigator.clipboard.writeText(emailText).then(() => {
+                const toast = document.getElementById('email-toast-box');
+                const tag = document.getElementById('toast-msg-tag');
+                
+                tag.textContent = currentLang === 'en' ? 'Copied!' : '已複製！';
+                tag.style.color = '#ffffff';
+                tag.style.backgroundColor = '#FF5E00';
+                
+                toast.classList.remove('opacity-0', 'scale-90');
+                toast.classList.add('opacity-100', 'scale-100');
+                
+                setTimeout(() => {
+                    toast.classList.remove('opacity-100', 'scale-100');
+                    toast.classList.add('opacity-0', 'scale-90');
+                }, 2400);
+            }).catch(err => {
+                console.error('Could not copy text: ', err);
+            });
+        }
+
+        // 智慧雙語切換控制中心
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'zh' : 'en';
+            document.getElementById('lang-text-display').textContent = currentLang === 'en' ? 'EN / 繁中' : '繁中 / EN';
+            
+            // 語系控制防碎裂
+            const targetTitles = document.querySelectorAll('.dynamic-title-style');
+            targetTitles.forEach(title => {
+                if (currentLang === 'en') {
+                    title.style.fontFamily = "'Space Grotesk', sans-serif";
+                    title.style.letterSpacing = "0.1em";
+                    title.style.fontWeight = "700";
+                } else {
+                    title.style.fontFamily = "'Noto Serif TC', serif";
+                    title.style.letterSpacing = "0.18em";
+                    title.style.fontWeight = "500";
+                }
+            });
+
+            document.querySelectorAll('[data-t9n]').forEach(el => {
+                const key = el.getAttribute('data-t9n');
+                if (translations[currentLang][key]) {
+                    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                        el.placeholder = translations[currentLang][key];
+                    } else {
+                        el.innerHTML = translations[translations[currentLang][key] ? currentLang : 'en'][key];
+                    }
+                }
+            });
+
+            // 多語系動態下載核心邏輯
+            const resumeBtn = document.getElementById('dynamic-resume-btn');
+            if (resumeBtn) {
+                if (currentLang === 'en') {
+                    resumeBtn.setAttribute('href', 'https://drive.google.com/uc?export=download&id=1Oku1jaxJqfQWYo4LibwiuMgWpBsFu6UC');
+                    resumeBtn.setAttribute('download', "Yarong's Resume.pdf");
+                } else {
+                    resumeBtn.setAttribute('href', 'https://drive.google.com/uc?export=download&id=1JXQj5XkzQwBQPOaZJKeeQU1K3FhSA6Ao');
+                    resumeBtn.setAttribute('download', 'Ya_Rong_Tsai_Resume_ZH.pdf');
+                }
+            }
+
+            updateAdsContent();
+        }
+
+        function showView(viewId) {
+            const portBtn = document.getElementById('nav-port-btn');
+            const adsBtn = document.getElementById('nav-ads-btn');
+            const expBtn = document.getElementById('nav-exp-btn');
+
+            document.getElementById('view-main').classList.add('hidden');
+            document.getElementById('view-ads').classList.add('hidden');
+            document.getElementById('view-about').classList.add('hidden');
+
+            portBtn.className = "text-gray-600 px-4 py-2 font-inter tracking-widest uppercase text-xs font-bold transition-all orange-hover-effect rounded-full";
+            adsBtn.className = "text-gray-600 px-4 py-2 font-inter tracking-widest uppercase text-xs font-bold transition-all orange-hover-effect rounded-full";
+            expBtn.className = "text-gray-600 px-4 py-2 font-inter tracking-widest uppercase text-xs font-bold transition-all orange-hover-effect rounded-full";
+
+            if (viewId === 'main') {
+                document.getElementById('view-main').classList.remove('hidden');
+                portBtn.className = "text-[#FF5E00] px-4 py-2 font-inter tracking-widest uppercase text-xs font-bold neumorphic-sunken active-tab rounded-full";
+            } else if (viewId === 'ads') {
+                document.getElementById('view-ads').classList.remove('hidden');
+                updateAdsContent();
+                adsBtn.className = "text-[#FF5E00] px-4 py-2 font-inter tracking-widest uppercase text-xs font-bold neumorphic-sunken active-tab rounded-full";
+            } else if (viewId === 'about') {
+                document.getElementById('view-about').classList.remove('hidden');
+                expBtn.className = "text-[#FF5E00] px-4 py-2 font-inter tracking-widest uppercase text-xs font-bold neumorphic-sunken active-tab rounded-full";
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function switchCurrency(currency) {
+            currentCurrency = currency;
+            document.querySelectorAll('[data-currency]').forEach(el => el.classList.toggle('active-tab', el.getAttribute('data-currency') === currency));
+            document.getElementById('hero-managed-spend').textContent = formatCurrency(841000) + '+';
+            updateAdsContent();
+        }
+
+        function switchBudget(tier) {
+            currentBudget = tier;
+            document.querySelectorAll('[data-budget]').forEach(el => el.classList.toggle('active-tab', el.getAttribute('data-budget') === tier));
+            updateAdsContent();
+        }
+
+        function updateAdsContent() {
+            const data = adsData[currentBudget];
+            if(!document.getElementById('val-spend')) return;
+            
+            document.getElementById('val-spend').textContent = formatCurrency(data.spend);
+            document.getElementById('val-2').textContent = data.kpi2_val.toLocaleString();
+            document.getElementById('val-3').textContent = data.kpi3_val.toLocaleString();
+            document.getElementById('val-insight').textContent = translations[currentLang][data.insight];
+            
+            document.getElementById('kpi-label-2').textContent = translations[currentLang][data.kpi2_lbl];
+            document.getElementById('kpi-label-3').textContent = translations[currentLang][data.kpi3_lbl];
+
+            const tableBody = document.getElementById('table-body');
+            tableBody.innerHTML = '';
+            data.table.forEach(row => {
+                const tr = document.createElement('tr');
+                tr.className = 'border-b border-black/5 last:border-0 hover:bg-black/5';
+                tr.innerHTML = `<td class="py-2">${translations[currentLang][row.m] || row.m}</td><td class="py-2 font-bold text-right text-primary">${row.isCurrency ? formatCurrency(row.v) : row.v}</td>`;
+                tableBody.appendChild(tr);
+            });
+        }
+
+        const cursor = document.getElementById('custom-cursor');
+        const cursorGlow = document.getElementById('cursor-glow');
+        if(cursor && cursorGlow) {
+            document.addEventListener('mousemove', (e) => {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+                cursorGlow.style.left = e.clientX + 'px';
+                cursorGlow.style.top = e.clientY + 'px';
+            });
+            document.querySelectorAll('a, button, input, textarea, .flip-card, h1, h2, .group\\/avatar').forEach(el => {
+                el.addEventListener('mouseenter', () => { cursor.classList.add('expanded'); cursorGlow.classList.add('expanded'); });
+                el.addEventListener('mouseleave', () => { cursor.classList.remove('expanded'); cursorGlow.classList.remove('expanded'); });
+            });
+        }
+
+        showView('main');
+</script>
+</body>
+</html>
