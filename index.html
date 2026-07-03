@@ -305,17 +305,41 @@
             opacity: 0;
             z-index: 1;
         }
+        
+        /* 🌟 優化：極致磨砂毛玻璃拉簾浮動層與內嵌新擬態按鈕 🌟 */
+        .story-bubble-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 30;
+            display: flex;
+            flex-col;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            background-color: rgba(224, 224, 224, 0.45); /* 霧面半透明基底 */
+            backdrop-filter: blur(12px); /* 高級感毛玻璃 */
+            -webkit-backdrop-filter: blur(12px);
+            padding: 24px;
+            transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1);
+            pointer-events: none;
+        }
+
+        /* 懸停交互觸發：零位移、零縮放，純粹淡入淡出 */
         .perfect-square-photo-box:hover .person-img {
             opacity: 0;
         }
         .perfect-square-photo-box:hover .road-img {
             opacity: 1;
         }
+        .perfect-square-photo-box:hover .story-bubble-overlay {
+            opacity: 1;
+        }
     </style>
 </head>
 <body class="font-body-md text-on-surface overflow-x-hidden">
 
-<!-- 🌟 全局高質感毛玻璃語言選擇拉簾（完美阻隔初始中英混雜狀態） 🌟 -->
+<!-- 🌐 全局高質感毛玻璃語言選擇拉簾 🌟 -->
 <div id="global-lang-overlay" class="fixed inset-0 z-[999999] flex flex-col items-center justify-center bg-[#e0e0e0]/70 backdrop-blur-md transition-opacity duration-600 ease-in-out">
     <div class="text-center max-w-md px-6">
         <h2 class="text-2xl font-black tracking-widest text-primary mb-2 font-metal-brushed select-none">WELCOME</h2>
@@ -378,10 +402,10 @@
 </div>
 
 <div class="flex flex-col sm:flex-row gap-4 mt-2 justify-center w-full">
-    <a class="neumorphic-raised px-xl py-md rounded-full font-label-caps text-label-caps uppercase tracking-widest bg-[#e0e0e0] text-primary transition-all orange-hover-effect flex items-center justify-center" data-t9n="hero_cta" href="#contact">立即聯繫</a>
-    <a id="dynamic-resume-btn" class="neumorphic-raised px-xl py-md rounded-full font-label-caps text-label-caps uppercase tracking-widest bg-[#e0e0e0] text-secondary transition-all orange-hover-effect flex items-center justify-center gap-2 group cursor-none" href="https://drive.google.com/uc?export=download&id=1JXQj5XkzQwBQPOaZJKeeQU1K3FhSA6Ao" download="Ya_Rong_Tsai_Resume_ZH.pdf" target="_blank">
+    <a class="neumorphic-raised px-xl py-md rounded-full font-label-caps text-label-caps uppercase tracking-widest bg-[#e0e0e0] text-primary transition-all orange-hover-effect flex items-center justify-center" data-t9n="hero_cta" href="#contact">Let's Talk</a>
+    <a id="dynamic-resume-btn" class="neumorphic-raised px-xl py-md rounded-full font-label-caps text-label-caps uppercase tracking-widest bg-[#e0e0e0] text-secondary transition-all orange-hover-effect flex items-center justify-center gap-2 group cursor-none" href="https://drive.google.com/uc?export=download&id=1Oku1jaxJqfQWYo4LibwiuMgWpBsFu6UC" download="Yarong's Resume.pdf" target="_blank">
         <span class="material-symbols-outlined text-lg group-hover:-translate-y-1 transition-transform">download</span>
-        <span data-t9n="hero_resume">下載履歷</span>
+        <span data-t9n="hero_resume">Download Resume</span>
     </a>
 </div>
 </header>
@@ -404,7 +428,7 @@
 <span class="neumorphic-raised px-md py-sm rounded-full font-label-caps text-label-caps hover:scale-105 transition-transform" data-t9n="skill_3">旅宿管理</span>
 <span class="neumorphic-raised px-md py-sm rounded-full font-label-caps text-label-caps hover:scale-105 transition-transform" data-t9n="skill_4">協助網頁設計</span>
 <span class="neumorphic-raised px-md py-sm rounded-full font-label-caps text-label-caps hover:scale-105 transition-transform" data-t9n="skill_5">AI工具應用</span>
-<span class="neumorphic-raised px-md py-sm rounded-full font-label-caps text-label-caps hover:scale-105 transition-transform" data-t9n="skill_6">數據分析</span>
+<span class="neumorphic-raised px-md py-sm rounded-full font-label-caps text-label-caps hover:scale-105 transition-transform" data-t9n="skill_6">Data Analytics</span>
 <span class="neumorphic-raised px-md py-sm rounded-full font-label-caps text-label-caps hover:scale-105 transition-transform" data-t9n="skill_7">專案管理</span>
 </div>
 </div>
@@ -551,15 +575,26 @@
 <section class="max-w-6xl mx-auto px-margin py-xl">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
-        <!-- 🌟 完好繼承：正方形、精緻純粹淡入、無震動的高質感時空抽離意境照片區 🌟 -->
+        <!-- 🌟 完美優化升級：正方形照片、零震動，懸停觸發霧面毛玻璃拉簾與精緻新擬態按鈕 🌟 -->
         <div class="lg:col-span-5 flex justify-center items-center select-none w-full">
             <div class="w-full max-w-sm neumorphic-sunken p-2 rounded-[2.5rem]">
-                <div class="perfect-square-photo-box">
+                <a href="https://mp.weixin.qq.com/s/OPy2eLsc_apEa8XHK-U8gA" target="_blank" class="perfect-square-photo-box block relative">
                     <!-- 底層公路空景照 -->
                     <img class="road-img" src="https://i.ibb.co/d06pB6hT/magic-edit-TUFIT0lt-Mm-ZMMzgj-MSNi-ODg5-MGU0-Yj-Aw-Y2-Y5-MGM1-Nj-Y3-MGNm-Yz-Qy-Mz-Fm-Nm-Nl-Yi-Mz-Nj-Uz-Iy.jpg" alt="Pure Serene Road Landscape Background">
                     <!-- 頂層人物坐姿照 -->
                     <img class="person-img" src="https://i.ibb.co/8nQDWCf3/DSC-5758-01-1.jpg" alt="Ya Rong Tsai Sitting Portrait">
-                </div>
+                    
+                    <!-- 🌟 霧面半透明毛玻璃拉簾層 🌟 -->
+                    <div class="story-bubble-overlay">
+                        <p class="text-xs md:text-sm font-semibold text-gray-800 leading-relaxed text-center tracking-wide mb-5 px-2" data-t9n="story_bubble">
+                            因為中國戶外雜誌邀稿，我也幫這個陪了我10年的背包寫了個故事，還有時間的話點進來看看吧!
+                        </p>
+                        <!-- 內嵌極致經典新擬態按鈕 -->
+                        <div class="px-5 py-2.5 rounded-full neumorphic-raised bg-[#e0e0e0] text-[#FF5E00] text-[11px] font-bold tracking-widest font-label-caps uppercase shadow-sm">
+                            <span data-t9n="story_btn">閱讀背包故事</span> →
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
 
@@ -672,6 +707,8 @@
                 story_p2: 'Hi, I’m from Taiwan, a subtropical country. If I were to share the most essential part of who I am, my story would begin in 2016.',
                 story_p3: '2016 is often remembered as the last era of pure simplicity. I was eighteen then, with my very first smartphone and limited data plan. That year, I went backpacking for the first time, spending two months hitchhiking from Albania to Rome. In every city, I held a paper map, and every single direction was found by asking strangers. Back then, summers seemed to be super slow, and resources were far more limited. I remember that when there was no internet, people looked into each other\'s eyes when they spoke, and getting to a destination took a long, mindful walk.',
                 story_p4: 'Everyone has their own Rome in their heart, and so, every summer since, I have dedicated two months to traveling to the most distant corners of the world, searching for my own Rome. For the past decade, I have lived and traveled across the Middle East, Eastern Europe, and South Asia. Every city has carried a piece of my imagination and shaped a part of who I am. I have always believed that when we are young, we should have the most limited resources and walk to the furthest places.',
+                story_bubble: 'Because of an invitation from a Chinese outdoor magazine, I also wrote a story for this backpack that has been with me for 10 years. If you still have time, click in to take a look!',
+                story_btn: 'Read Backpack Story',
                 skill_major_lbl: 'MAJOR', skill_major_val: 'Media & Communications',
                 skill_1: 'Content Writing', skill_2: 'Google Ads', skill_3: 'Guest Facility Operations', skill_4: 'Web Design Assistance', skill_5: 'AI Tools Integration', skill_6: 'Data Analytics', skill_7: 'Project Management',
                 p1_title: 'RelaxOnCup Crowdfunding Launch', p1_role: 'Digital Marketer & Sourcing Specialist', p1_back_role: 'Digital Marketer & Crowdfunding Strategist', p1_back_strat: 'Pre-launch survey market research, audience analysis, and precision ad delivery.', p1_back_res: 'Ignited social engagement, achieving a 0-to-1 e-commerce market footprint and remarkable fundraising success.',
@@ -696,8 +733,10 @@
                 lbl_role: '【角色】', lbl_strat: '【策略】', lbl_res: '【Result】', btn_view_live: '查看實案連結', btn_view_metrics: '檢視成效指標', btn_talk_biz: '洽談電商合作',
                 story_p1: '如果你會看到這個頁面的話，我想簡單的介紹我自己…',
                 story_p2: '嗨，我來自台灣，一個亞熱帶島國。如果要把最重要的那部分的自己跟你分享的話，我會從 2016 開始說起。',
-                story_p3: '2016 年，被視為最後一個單純的年代，當時我正值十八歲，拿到第一支智慧型手機、有著流量很少的網路。第一次當背包客，花了兩個月的時間從阿爾巴尼亞搭便車去羅馬，每到一個城市就拿一份紙本地圖，每一條路都是嘴巴問出來的。當時的夏天好像過得很慢，資源也少痕了，沒有網路的時候，我記得人們都看著對方的眼睛說話，要去一個想去的地方要走很久。',
+                story_p3: '2016 年，被視為最後一個單純的年代，當時我正值十八歲，拿到第一支智慧型手機、有著流量很少的網路。第一次當背包客，花了兩個月的時間從阿爾巴尼亞搭便車去羅馬，每到一個城市就拿一份紙本地圖，每一條路都是嘴巴問出來的。當時的夏天好像過得很慢，資源也少了很多，沒有網路的時候，我記得人們都看著對方的眼睛說話，要去一個想去的地方要走很久。',
                 story_p4: '每個人的心中都有自己的羅馬，於是那之後每個夏天我都花兩個月的時間去一個特別遠的地方找我的羅馬。十年來我在中東、東歐和南亞旅居，每一個城市都承載我的想像力和一部份的自己。我一直相信一個人在年輕的時候需要擁有最有限的資源，去最遠的地方。',
+                story_bubble: '因為中國戶外雜誌邀稿，我也幫這個陪了我10年的背包寫了個故事，還有時間的話點進來看看吧!',
+                story_btn: '閱讀背包故事',
                 skill_major_lbl: '主修', skill_major_val: '媒體與傳播',
                 skill_1: '內容撰寫', skill_2: 'Google 廣告', skill_3: '旅宿管理', skill_4: '協助網頁設計', skill_5: 'AI工具應用', skill_6: '數據分析', skill_7: '專案管理',
                 p1_title: 'RelaxOnCup 輕鬆杯群眾募資上市', p1_role: '數位行銷與群眾募資策略師', p1_back_role: '數位行銷與群眾募資策略師', p1_back_strat: '市場前期問卷調延、受眾分析與精準廣告投放', p1_back_res: '引爆社群話題，達成 0 到 1 的電商市場滲透與亮眼募資成效。',
@@ -715,7 +754,7 @@
             }
         };
 
-        let currentLang = 'zh'; // 核心初始大腦設定
+        let currentLang = 'zh'; 
         let currentCurrency = 'HKD';
         let currentBudget = 'small';
         const exchangeRates = { 'HKD': 1, 'TWD': 3.9, 'USD': 0.13 };
@@ -727,7 +766,6 @@
             large: { spend: 820000, kpi2_val: 1309, kpi2_lbl: 'kpi_conversions', kpi3_val: 8890000, kpi3_lbl: 'kpi_impr', insight: 'insight_l', table: [{m: 'row_impressions', v: '8,890,000'}, {m: 'row_display_clicks', v: '94,600'}, {m: 'row_avg__cpc', v: 8.66, isCurrency: true}, {m: 'row_conv__rate', v: '1.38%'}, {m: 'row_bidding_strategy', v: 'tROAS / tCPA'}] }
         };
 
-        // 🌟 全局拉簾首選語系開通邏輯（淡出後完全隱藏） 🌟
         function selectInitialLanguage(lang) {
             currentLang = lang === 'en' ? 'zh' : 'en'; 
             toggleLanguage();
